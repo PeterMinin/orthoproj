@@ -68,7 +68,7 @@ class OrthoProj():
     _axisXY = None
     _axis3D = None
 
-    def __init__(self, title=None):
+    def __init__(self, title=None, **kwargs):
         """
         Build an :class:`OrthoProj` object
 
@@ -76,9 +76,11 @@ class OrthoProj():
             title (string). The title string for the orthogonal projection figure.
             Default: None, i.e., default naming
 
+            Any keyword arguments are also passed to :func:`~matplotlib.pyplot.figure`.
+
         """
 
-        fig = plt.figure(title)
+        fig = plt.figure(title, **kwargs)
         axisXZ = fig.add_subplot(221, title="Vertical Plane - XZ")
         axisYZ = fig.add_subplot(222, title="Lateral Plane - YZ")
         axisXY = fig.add_subplot(223, title="Horizontal Plane - XY")
